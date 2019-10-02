@@ -30,6 +30,6 @@ end
 # upcoming_anime_scraper
 
 def scrape_anime_profile
-    html = 
+    html = open("https://myanimelist.net/anime" + anime.url)
     doc = Nokogiri::HTML(html)
 end
