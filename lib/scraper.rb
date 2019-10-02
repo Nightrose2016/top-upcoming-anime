@@ -3,8 +3,8 @@ require 'open-uri'
 require 'pry'
 
 def top_anime_scraper
-    
-    html = open(https://myanimelist.net)
+
+    html = open("https://myanimelist.net/")
     doc = Nokogiri::HTML(html)
     binding.pry
 
