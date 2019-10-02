@@ -7,7 +7,7 @@ def top_upcoming_anime_scraper
     html = open("https://myanimelist.net/")
     doc = Nokogiri::HTML(html)
     doc.css(".ranking-digest")[6].css(".ranking-unit").css(".data").each { |anime| 
-        title = anime.css(".title")
+        title = anime.css(".title").text.strip
         url =  anime.css(".title a").attr("href").value
         Anime.new(title, url)
     }
@@ -21,7 +21,7 @@ def upcoming_anime_scraper
     html = open("https://myanimelist.net/anime/season")
     doc = Nokogiri::HTML(html)
     doc.css(".js-categories-seasonal").each { |anime|
-        title = anime.css(".title-text")
+        title = anime.css(".title-text").text.strip
         url = anime.css(".title-text a").attr("href").value
         Anime.new(title, url)
     }
