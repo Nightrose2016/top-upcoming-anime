@@ -24,7 +24,7 @@ def upcoming_anime_scraper
         title = anime.css(".title-text")
         url = anime.css(".title-text a").attr("href").value
         Anime.new(title, url)
-    binding.pry
+    # binding.pry
 end
 
-upcoming_anime_scraper
+# upcoming_anime_scraper
