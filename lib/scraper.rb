@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-def top_anime_scraper
+def top_upcoming_anime_scraper
 
     html = open("https://myanimelist.net/")
     doc = Nokogiri::HTML(html)
@@ -11,3 +11,8 @@ def top_anime_scraper
 end
 
 top_anime_scraper
+
+def upcoming_anime_scraper
+    html = open("https://myanimelist.net/anime/season")
+    doc = Nokogiri::HTML(html)
+end
