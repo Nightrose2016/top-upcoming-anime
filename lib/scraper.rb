@@ -24,6 +24,7 @@ def upcoming_anime_scraper
         title = anime.css(".title-text")
         url = anime.css(".title-text a").attr("href").value
         Anime.new(title, url)
+    }
     # binding.pry
 end
 
@@ -32,4 +33,7 @@ end
 def scrape_anime_profile
     html = open("https://myanimelist.net/anime" + anime.url)
     doc = Nokogiri::HTML(html)
+    binding.pry
 end
+
+scrape_anime_profile
