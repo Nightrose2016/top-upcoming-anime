@@ -28,3 +28,8 @@ def upcoming_anime_scraper
 end
 
 # upcoming_anime_scraper
+
+def scrape_anime_profile
+    html = 
+    doc = Nokogiri::HTML(html)
+end
