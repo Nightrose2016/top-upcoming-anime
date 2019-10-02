@@ -23,4 +23,4 @@ def upcoming_anime_scraper
     binding.pry
 end
 
-#upcoming_anime_scraper
+upcoming_anime_scraper
