@@ -6,13 +6,16 @@ def top_upcoming_anime_scraper
 
     html = open("https://myanimelist.net/")
     doc = Nokogiri::HTML(html)
+    doc.css(".ranking-digest")[6].css(".ranking-unit").css(".data").css(".title").text
     binding.pry
 
 end
 
-top_anime_scraper
+top_upcoming_anime_scraper
 
-def upcoming_anime_scraper
-    html = open("https://myanimelist.net/anime/season")
-    doc = Nokogiri::HTML(html)
-end
+# def upcoming_anime_scraper
+#     html = open("https://myanimelist.net/anime/season")
+#     doc = Nokogiri::HTML(html)
+# end
+
+#upcoming_anime_scraper
