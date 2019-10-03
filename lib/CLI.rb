@@ -28,17 +28,13 @@ class CLI
         else
             Scraper.scrape_anime_profile(anime)
             puts "Here are the details for #{anime.title}:"
-            puts "Staus: #{status}"
+            puts "Status: #{status}"
             puts "Aired: #{aired}"
             puts "Broadcast #{broadcast}"
             puts "Studio(s) #{studio}"
             puts "Genre #{genre}"
             puts "Duration #{duration}"
             puts "Rating #{rating}"
-            
-        else
-            
-        end
         end
     end
     
