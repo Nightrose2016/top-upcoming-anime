@@ -1,4 +1,6 @@
 class Anime
+  @@all = []
+
     def initialize(title, url)
       @title = title
       @url = url
