@@ -2,8 +2,8 @@ class CLI
     def run
 
         puts "Welcome to your seasonal anime database."
-        puts "would you like to see this seasons most anticipated anime or all the upcoming seasonal anime?"
-        puts '"Most anticipated" or "all seasonal".' 
+        puts "Would you like to see this season's most anticipated anime or all the upcoming seasonal anime?"
+        puts '"Please input: most anticipated" or "all seasonal".' 
         while user_input != 'exit'
             user_input = gets.chomp
         case user_input.downcase
@@ -18,7 +18,7 @@ class CLI
     end
 
     def menu
-        puts "please select an anime to get it's details"
+        puts "Please select an anime to get it's details"
         input = gets.chomp
         Anime.all[input.to_i = 1]
 
