@@ -31,7 +31,7 @@ class CLI
             Scraper.scrape_anime_profile(anime)
             puts "Here are the details for #{anime.title}:"
             puts "Status: #{anime.status}"
-            puts "Aired: #{anime.aired}"
+            puts "#{anime.aired}"
             puts "Broadcast #{anime.broadcast}"
             puts "Studio(s) #{anime.studio}"
             puts "Genre #{anime.genre}"

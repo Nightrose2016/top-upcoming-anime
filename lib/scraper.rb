@@ -34,14 +34,14 @@ class Scraper
     def self.scrape_anime_profile(anime)
         html = open(anime.url)
         doc = Nokogiri::HTML(html)
-        # anime.status =  
+        anime.status =  
         anime.aired = doc.css(".borderClass").css(".spaceit")[7].text
-        # anime.broadcast =
-        # anime.studio =
-        # anime.genre =
-        # anime.duration =
-        # anime.rating =
-        # binding.pry
+        anime.broadcast = doc.css(".borderClass").css(".spaceit")[8].text
+        anime.studio =
+        anime.genre =
+        anime.duration = doc.css(".borderClass").css(".spaceit")[11].text
+        anime.rating =
+        binding.pry
     end
 end
 
