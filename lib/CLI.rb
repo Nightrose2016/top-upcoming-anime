@@ -14,6 +14,7 @@ class CLI
                 Scraper.upcoming_anime_scraper
                 Anime.all.each.with_index { |anime, index| puts "#{index} #{anime.title}" }
         end
+        end
         menu
     end
 
