@@ -40,7 +40,7 @@ def scrape_anime_profile
     Anime.genre =
     Anime.duration =
     Anime.rating =
-    binding.pry
+    #binding.pry
 end
 
 # scrape_anime_profile
