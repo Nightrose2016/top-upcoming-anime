@@ -10,7 +10,8 @@ class Scraper
         doc.css(".ranking-digest")[6].css(".ranking-unit").css(".data").each { |anime| 
             title = anime.css(".title").text.strip
             url =  anime.css(".title").attr("href").value
-            Anime.new(title, url)}
+            Anime.new(title, url)
+        }
         #binding.pry
 
     end
@@ -23,7 +24,8 @@ class Scraper
         doc.css(".js-categories-seasonal").each { |anime|
             title = doc.css(".js-categories-seasonal").css(".title-text").text.strip
             url = anime.css(".title-text a").attr("href").value 
-            Anime.new(title, url)}
+            Anime.new(title, url)
+        }
         # binding.pry
     end
 
