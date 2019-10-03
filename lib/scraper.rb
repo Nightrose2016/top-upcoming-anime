@@ -2,7 +2,8 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 class Scraper
-    def top_upcoming_anime_scraper
+    
+    def self.top_upcoming_anime_scraper
 
         html = open("https://myanimelist.net/")
         doc = Nokogiri::HTML(html)
@@ -16,7 +17,7 @@ class Scraper
 
     #top_upcoming_anime_scraper
 
-    def upcoming_anime_scraper
+    def self.upcoming_anime_scraper
         html = open("https://myanimelist.net/anime/season")
         doc = Nokogiri::HTML(html)
         doc.css(".js-categories-seasonal").each { |anime|
@@ -26,9 +27,9 @@ class Scraper
         # binding.pry
     end
 
-    upcoming_anime_scraper
+    # upcoming_anime_scraper
 
-    def scrape_anime_profile
+    def self.scrape_anime_profile
         html = open(Anime.url)
         doc = Nokogiri::HTML(html)
         # Anime.status =  
@@ -38,7 +39,7 @@ class Scraper
         # Anime.genre =
         # Anime.duration =
         # Anime.rating =
-        # binding.pry
+        binding.pry
     end
 end
 
