@@ -1,4 +1,5 @@
 class Anime
+  attr_accessor :title, :url
   @@all = []
 
     def initialize(title, url)
