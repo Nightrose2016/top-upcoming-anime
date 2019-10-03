@@ -22,7 +22,7 @@ class CLI
     def menu
         puts "Please select an anime to get it's details"
         input = gets.chomp
-        Anime.all[input.to_i-1]
+        anime = Anime.all[input.to_i-1]
 
         if !anime
             puts "Anime not found.  Please select a different movie!"
@@ -30,13 +30,13 @@ class CLI
         else
             Scraper.scrape_anime_profile(anime)
             puts "Here are the details for #{anime.title}:"
-            puts "Status: #{Anime.status}"
-            puts "Aired: #{Anime.aired}"
-            puts "Broadcast #{Anime.broadcast}"
-            puts "Studio(s) #{Anime.studio}"
-            puts "Genre #{Anime.genre}"
-            puts "Duration #{Anime.duration}"
-            puts "Rating #{Anime.rating}"
+            puts "Status: #{anime.status}"
+            puts "Aired: #{anime.aired}"
+            puts "Broadcast #{anime.broadcast}"
+            puts "Studio(s) #{anime.studio}"
+            puts "Genre #{anime.genre}"
+            puts "Duration #{anime.duration}"
+            puts "Rating #{anime.rating}"
         end
     end
 end

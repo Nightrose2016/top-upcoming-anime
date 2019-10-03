@@ -29,7 +29,7 @@ class Scraper
 
     # upcoming_anime_scraper
 
-    def self.scrape_anime_profile
+    def self.scrape_anime_profile(anime)
         html = open(Anime.url)
         doc = Nokogiri::HTML(html)
         # Anime.status =  
