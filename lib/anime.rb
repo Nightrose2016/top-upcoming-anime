@@ -9,10 +9,6 @@ class Anime
   end
 
   def self.all
-      @@all
-  end
-
-  def status(status)
-    @status = status
+    @@all
   end
 end
