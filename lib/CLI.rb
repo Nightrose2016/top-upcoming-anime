@@ -30,7 +30,11 @@ class CLI
             puts "Here are the details for #{anime.title}:"
             puts "Staus: #{status}"
             puts "Aired: #{aired}"
-            puts ""
+            puts "Broadcast #{broadcast}"
+            puts "Studio(s) #{studio}"
+            puts "Genre #{genre}"
+            puts "Duration #{duration}"
+            puts "Rating #{rating}"
             
         else
             
