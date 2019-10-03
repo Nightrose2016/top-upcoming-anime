@@ -16,5 +16,7 @@ class CLI
         end
         
     end
+
+    def menu
     
 end
