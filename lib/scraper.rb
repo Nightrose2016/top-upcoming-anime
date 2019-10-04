@@ -36,20 +36,21 @@ class Scraper
         html = open(anime.url)
         doc = Nokogiri::HTML(html)
         if doc.css(".borderClass").css("div")[9].css("a").text == "Movie"
-            anime.aired = doc.css(".borderClass").css("div")[12].text
+            anime.aired = doc.css(".borderClass").css(".spaceit")[7].text.gsub("\n","")
             anime.studio = doc.css(".borderClass").css("div")[15].css("a").text
-            anime.genre = doc.css(".borderClass").css("div")[17].css("a").attr("title").value
-            anime.rating = doc.css(".borderClass").css("div")[19].text
-            anime.duration = doc.css(".borderClass").css("div")[18].text
-            binding.pry
+            anime.broadcast = "this is a movie with no schedualed broadcast"
+            anime.genre =  doc.css(".borderClass").css("div")[17].text.split("\n")[2]
+            anime.rating = doc.css(".borderClass").css("div")[19].text.gsub("\n", "").strip
+            anime.duration = doc.css(".borderClass").css("div")[18].text.gsub("\n", "").strip
+            # binding.pry
         else    
-            # anime.status =  
-            anime.aired = doc.css(".borderClass").css(".spaceit")[7].text
-            anime.broadcast = doc.css(".borderClass").css(".spaceit")[8].text
-            # anime.studio =
-            # anime.genre =
-            anime.duration = doc.css(".borderClass").css(".spaceit")[11].text
-            # anime.rating =
+            anime.status =  doc.css(".borderClass").css("div")[12].text.gsub("\n","") 
+            anime.aired = doc.css(".borderClass").css("div")[13].text.gsub("\n","")
+            anime.broadcast = doc.css(".borderClass").css("div")[15].text.gsub("\n","").strip
+            anime.studio = doc.css(".borderClass").css("div")[18].text.gsub("\n","").strip
+            anime.genre = doc.css(".borderClass").css("div")[20].text.gsub("\n","").strip
+            anime.duration = doc.css(".borderClass").css("div")[21].text.gsub("\n","").strip
+            anime.rating = doc.css(".borderClass").css("div")[22].text.gsub("\n","").strip
             binding.pry
         end
     end
