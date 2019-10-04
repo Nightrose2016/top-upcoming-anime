@@ -30,7 +30,15 @@ class Scraper
         # binding.pry
     end
 
-    # upcoming_anime_scraper
+     # upcoming_anime_scraper
+
+    def self.upcoming_anime_movies
+        html = open("https://myanimelist.net/anime/season")
+        doc = Nokogiri::HTML(html)
+        
+    end
+
+    # upcoming_anime_movies
 
     def self.scrape_anime_profile(anime)
         html = open(anime.url)
