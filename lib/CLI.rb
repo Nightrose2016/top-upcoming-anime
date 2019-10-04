@@ -2,6 +2,9 @@ require 'pry'
 require 'colorize'
 class CLI
     def run
+
+        # system('cls') || system('clear')
+
         user_input = nil
         puts "Welcome to your seasonal anime database."
         puts "Would you like to see this season's most anticipated anime or all the upcoming seasonal anime?"
