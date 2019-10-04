@@ -5,15 +5,15 @@ class CLI
         user_input = nil
         puts "Welcome to your seasonal anime database."
         puts "Would you like to see this season's most anticipated anime or all the upcoming seasonal anime?"
-        puts 'Please input: "most anticipated" or "all seasonal".'.colorize(:green) 
+        puts 'Please input: "1" for most anticipated or "2" for all seasonal".'.colorize(:green) 
         puts ""
         while user_input != 'exit'
             user_input = gets.chomp
         case user_input
-        when "most anticipated"
+        when "1"
             Scraper.top_upcoming_anime_scraper
             Anime.all.each.with_index(1) { |anime, index| puts "#{index} #{anime.title}" }
-        when "all seasonal"
+        when "2"
             Scraper.upcoming_anime_scraper
             Anime.all.each.with_index(1) { |anime, index| puts "#{index} #{anime.title}" }
         end
