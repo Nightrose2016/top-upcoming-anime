@@ -9,6 +9,7 @@ class CLI
         puts ""
         while user_input != 'exit'
             user_input = gets.chomp
+            puts ""
         case user_input
         when "1"
             Scraper.top_upcoming_anime_scraper
@@ -38,7 +39,7 @@ class CLI
             puts "Studio(s) #{anime.studio}"
             puts "Genre #{anime.genre}"
             puts "#{anime.duration}"
-            puts "Rating #{anime.rating}"
+            puts "Rating 3#{anime.rating}"
         end
     end
 end
