@@ -35,7 +35,12 @@ class Scraper
     def self.upcoming_anime_movies
         html = open("https://myanimelist.net/anime/season")
         doc = Nokogiri::HTML(html)
+        doc.css(".js-seasonal-anime-list-key-3").css(".title-text").each { |anime| 
+            title = anime.css(".link-title").text.strip
+            url = anime.css(".title-text a").attr("href").value
+            # Anime.new(title, url)
         binding.pry
+        }
     end
 
     upcoming_anime_movies
