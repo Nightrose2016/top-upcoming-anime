@@ -21,11 +21,12 @@ class Scraper
     def self.upcoming_anime_scraper
         html = open("https://myanimelist.net/anime/season")
         doc = Nokogiri::HTML(html)
-        doc.css(".js-categories-seasonal").each { |anime|
-            title = doc.css(".js-categories-seasonal").css(".title-text").text.strip
+        doc.css(".js-categories-seasonal").css(".title").each { |anime|
+            title = anime.css(".title-text").text.strip
             url = anime.css(".title-text a").attr("href").value 
             Anime.new(title, url)
         }
+
         # binding.pry
     end
 
