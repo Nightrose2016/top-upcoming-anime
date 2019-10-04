@@ -37,10 +37,11 @@ class Scraper
         doc = Nokogiri::HTML(html)
         if doc.css(".borderClass").css("div")[9].css("a").text == "Movie"
             anime.aired = doc.css(".borderClass").css("div")[12].text
-            anime.studio = doc.css(".borderClass").css("div")[15].text
-            anime.genre = doc.css(".borderClass").css("div")[17].text
+            anime.studio = doc.css(".borderClass").css("div")[15].css("a").text
+            anime.genre = doc.css(".borderClass").css("div")[17].css("a").attr("title").value
             anime.rating = doc.css(".borderClass").css("div")[19].text
             anime.duration = doc.css(".borderClass").css("div")[18].text
+            binding.pry
         else    
             # anime.status =  
             anime.aired = doc.css(".borderClass").css(".spaceit")[7].text
