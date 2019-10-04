@@ -35,12 +35,12 @@ class Scraper
     def self.upcoming_anime_movies
         html = open("https://myanimelist.net/anime/season")
         doc = Nokogiri::HTML(html)
-        doc.css(".js-seasonal-anime-list-key-3").css(".title-text").each { |anime| 
-            title = anime.css(".link-title").text.strip
-            url = anime.css(".title-text a").attr("href").value
-            # Anime.new(title, url)
-        binding.pry
+        doc.css(".js-seasonal-anime-list-key-3").css(".title-text").css(".link-title").each { |anime| 
+            title = anime.text
+            url = doc.css(".js-seasonal-anime-list-key-3").css(".title-text").css(".link-title").attr("href").value
+            Anime.new(title, url)
         }
+        #binding.pry
     end
 
     upcoming_anime_movies
@@ -56,16 +56,16 @@ class Scraper
             anime.rating = doc.css(".borderClass").css("div")[19].text.gsub("\n", "").strip
             anime.duration = doc.css(".borderClass").css("div")[18].text.gsub("\n", "").strip
             anime.status = doc.css(".borderClass").css("div")[11].text.gsub("\n", "").strip
-            binding.pry
+            #binding.pry
         else    
-            # anime.status = doc.css(".borderClass").css("div")[12].text.gsub("\n", "").strip
+            anime.status = doc.css(".borderClass").css("div")[12].text.gsub("\n", "").strip
             anime.aired = doc.css(".borderClass").css("div")[13].text.gsub("\n", "")
             anime.broadcast = doc.css(".borderClass").css("div")[15].text.gsub("\n", "").strip
             anime.studio = doc.css(".borderClass").css("div")[18].text.gsub("\n", "").strip
             anime.genre = doc.css(".borderClass").css("div")[20].text.gsub("\n", "").strip
             anime.duration = doc.css(".borderClass").css("div")[21].text.gsub("\n", "").strip
             anime.rating = doc.css(".borderClass").css("div")[22].text.gsub("\n", "").strip
-            binding.pry
+            #binding.pry
         end
     end
 end
