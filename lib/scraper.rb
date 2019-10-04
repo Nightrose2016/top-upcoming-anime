@@ -42,15 +42,16 @@ class Scraper
             anime.genre =  doc.css(".borderClass").css("div")[17].text.split("\n")[2]
             anime.rating = doc.css(".borderClass").css("div")[19].text.gsub("\n", "").strip
             anime.duration = doc.css(".borderClass").css("div")[18].text.gsub("\n", "").strip
-            # binding.pry
+            anime.status = doc.css(".borderClass").css("div")[11].text.gsub("\n", "").strip
+            binding.pry
         else    
-            anime.status =  doc.css(".borderClass").css("div")[12].text.gsub("\n","") 
-            anime.aired = doc.css(".borderClass").css("div")[13].text.gsub("\n","")
-            anime.broadcast = doc.css(".borderClass").css("div")[15].text.gsub("\n","").strip
-            anime.studio = doc.css(".borderClass").css("div")[18].text.gsub("\n","").strip
-            anime.genre = doc.css(".borderClass").css("div")[20].text.gsub("\n","").strip
-            anime.duration = doc.css(".borderClass").css("div")[21].text.gsub("\n","").strip
-            anime.rating = doc.css(".borderClass").css("div")[22].text.gsub("\n","").strip
+            # anime.status = doc.css(".borderClass").css("div")[12].text.gsub("\n", "").strip
+            anime.aired = doc.css(".borderClass").css("div")[13].text.gsub("\n", "")
+            anime.broadcast = doc.css(".borderClass").css("div")[15].text.gsub("\n", "").strip
+            anime.studio = doc.css(".borderClass").css("div")[18].text.gsub("\n", "").strip
+            anime.genre = doc.css(".borderClass").css("div")[20].text.gsub("\n", "").strip
+            anime.duration = doc.css(".borderClass").css("div")[21].text.gsub("\n", "").strip
+            anime.rating = doc.css(".borderClass").css("div")[22].text.gsub("\n", "").strip
             binding.pry
         end
     end
