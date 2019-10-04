@@ -4,7 +4,6 @@ require 'pry'
 class Scraper
     
     def self.top_upcoming_anime_scraper
-
         html = open("https://myanimelist.net/")
         doc = Nokogiri::HTML(html)
         doc.css(".ranking-digest")[6].css(".ranking-unit").css(".data").each { |anime| 
@@ -13,7 +12,6 @@ class Scraper
             Anime.new(title, url)
         }
         #binding.pry
-
     end
 
     #top_upcoming_anime_scraper
@@ -40,10 +38,10 @@ class Scraper
             url = doc.css(".js-seasonal-anime-list-key-3").css(".title-text").css(".link-title").attr("href").value
             Anime.new(title, url)
         }
-        #binding.pry
+    #     #binding.pry
     end
 
-    upcoming_anime_movies
+    # upcoming_anime_movies
 
     def self.scrape_anime_profile(anime)
         html = open(anime.url)
@@ -56,7 +54,7 @@ class Scraper
             anime.rating = doc.css(".borderClass").css("div")[19].text.gsub("\n", "").strip
             anime.duration = doc.css(".borderClass").css("div")[18].text.gsub("\n", "").strip
             anime.status = doc.css(".borderClass").css("div")[11].text.gsub("\n", "").strip
-            #binding.pry
+            binding.pry
         else    
             anime.status = doc.css(".borderClass").css("div")[12].text.gsub("\n", "").strip
             anime.aired = doc.css(".borderClass").css("div")[13].text.gsub("\n", "")
