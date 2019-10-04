@@ -27,13 +27,13 @@ class CLI
         puts "Please select an anime to get it's details".colorize(:green)
         input = gets.chomp
         anime = Anime.all[input.to_i-1]
-
         if !anime
             puts "Anime not found.  Please select a different movie!".colorize(:red)
             menu
         else
             Scraper.scrape_anime_profile(anime)
             puts "Here are the details for #{anime.title}:"
+            puts "#{anime.status}"
             puts "#{anime.aired}"
             puts "#{anime.broadcast}"
             puts "Studio(s) #{anime.studio}"
