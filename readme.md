@@ -4,5 +4,5 @@ I created this program arround my love of anime.  It scrapes My Anime List for t
 ## Getting Started
 
 
-### known ugs
+### known bugs
 Some anime may not show data properly.  This is due to different web designers and limitations on scraping.
