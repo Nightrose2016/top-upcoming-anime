@@ -1,7 +1,7 @@
 require 'pry'
 require 'colorize'
 class CLI
-    
+
     system('cls') || system('clear')
     
     def run
@@ -42,6 +42,9 @@ class CLI
         else
             Scraper.scrape_anime_profile(anime)
             puts "Here are the details for #{anime.title}:"
+            puts ""
+            puts "#{anime.url}"
+            
             puts "#{anime.status}"
             puts " #{anime.aired}"
             puts "#{anime.broadcast}"
