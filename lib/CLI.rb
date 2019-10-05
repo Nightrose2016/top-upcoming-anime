@@ -8,8 +8,7 @@ class CLI
         user_input = nil
         puts "Welcome to your seasonal anime database."
         puts "Would you like to see this season's most anticipated anime or all the upcoming seasonal anime?"
-        puts 'Please input: "1" for most anticipated, "2" for all seasonal TV'
-        puts ', or "3" for all seasonal movies.'.colorize(:green)
+        puts 'Please input: "1" for most anticipated, "2" for all seasonal TV, or "3" for all seasonal movies.'.colorize(:green)
         puts ""
         while user_input != 'exit'
             user_input = gets.chomp
@@ -35,7 +34,7 @@ class CLI
         input = gets.chomp
         anime = Anime.all[input.to_i-1]
         if !anime
-            puts "Anime not found.  Please select a different movie!".colorize(:red)
+            puts "Anime not found.  Please select a different anime!".colorize(:red)
             menu
         else
             Scraper.scrape_anime_profile(anime)
@@ -47,6 +46,20 @@ class CLI
             puts "Genre #{anime.genre}"
             puts "#{anime.duration}"
             puts "#{anime.rating}"
+            puts ""
+            puts ""
+            puts "would you like to look up another anime? yes/no"
+            while input != 'exit'
+                input = gets.chomp
+                puts ""
+            case input
+            when "yes"
+                Anime.clear
+                self.run
+            when "no"
+                exit
+            end
+            end
         end
     end
 end
