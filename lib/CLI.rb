@@ -1,9 +1,12 @@
 require 'pry'
 require 'colorize'
 class CLI
+    
+    system('cls') || system('clear')
+    
     def run
 
-        # system('cls') || system('clear')
+        
 
         user_input = nil
         puts "Welcome to your seasonal anime database."
