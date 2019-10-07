@@ -47,7 +47,7 @@ class Scraper
         html = open(anime.url)
         doc = Nokogiri::HTML(html)
         if doc.css(".borderClass").css("div")[9].css("a").text == "Movie"
-            anime.aired = doc.css(".borderClass").css(".spaceit")[7].text.match(/[JFMASND]\w{2}, \d{4}/)
+            anime.aired = doc.css(".borderClass").css(".spaceit")[7].text.split("Aired:")[1].strip
             anime.studio = doc.css(".borderClass").css("div")[15].css("a").text
             anime.broadcast = "this is a movie with no schedualed broadcast"
             anime.genre =  doc.css(".borderClass").css("div")[17].text.split("\n")[2]
@@ -57,7 +57,7 @@ class Scraper
             # binding.pry
         else    
             anime.status = doc.css(".borderClass").css("div")[12].text.gsub("\n", "").strip
-            anime.aired = doc.css(".borderClass").css("div")[13].text.gsub("\n", "")
+            anime.aired = doc.css(".borderClass").css(".spaceit")[7].text.split("Aired:")[1].strip
             anime.broadcast = doc.css(".borderClass").css("div")[15].text.gsub("\n", "").strip
             anime.studio = doc.css(".borderClass").css("div")[18].text.gsub("\n", "").strip
             anime.genre = doc.css(".borderClass").css("div")[20].text.gsub("\n", "").strip
