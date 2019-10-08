@@ -47,7 +47,7 @@ class CLI
             puts ""
             puts "#{anime.status}"
             puts "Aired: #{anime.aired}"
-            puts "#{anime.broadcast}"
+            puts "Broadcast: #{anime.broadcast}"
             puts "Studio(s): #{anime.studio}"
             puts "Genres: #{anime.genre}"
             puts "#{anime.duration}"
