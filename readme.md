@@ -5,4 +5,4 @@ I created this program arround my love of anime.  It scrapes My Anime List for t
 
 
 ### known bugs
-Some anime may not show data properly.  This is due to different web designers and limitations on scraping. To combat this URls are now included incase it happens untill I can figure out a better solution
+all seasonal anime scrapping all upcoming anime of the season.
